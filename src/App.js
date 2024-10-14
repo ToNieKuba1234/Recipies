@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { RecipeProvider } from './Components/Context/RecipeContext';
+import RecipeList from './Components/Recipe/RecipeList';
+import AddRecipeForm from './Components/Form/AddRecipeForm';
+import SearchBar from './Components/Search/SearchBar';
+
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecipeProvider>
+      <div>
+        <h1> Re-cipy strona</h1>
+        <SearchBar />
+        <RecipeList />
+        <h2 className="share-heading">Chcesz podzielić się swoją specjalnością?</h2>
+        <AddRecipeForm />
+      </div>
+    </RecipeProvider>
   );
 }
 
