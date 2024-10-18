@@ -10,7 +10,7 @@ function App() {
   return (
     <RecipeProvider>
       <div>
-        <h1> Re-cipy strona</h1>
+        <h1> Recipies strona</h1>
         <SearchBar />
         <RecipeList />
         <h2 className="share-heading">Chcesz podzielić się swoją specjalnością?</h2>

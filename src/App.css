@@ -132,3 +132,54 @@ li span {
     font-size: 1.5rem;
   }
 }
+
+.recipe-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3e3e3e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-left, .recipe-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+.recipe-content {
+  flex: 1;
+  text-align: left;
+  color: #fff;
+}
+
+.recipe-content strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.recipe-content span {
+  color: #ddd;
+}

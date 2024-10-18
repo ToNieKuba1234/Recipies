@@ -1,8 +1,9 @@
 export const initialState = {
     recipes: [
-        {id: 1, name: 'Sphhagetti Carbonara', ingredients: 'makaron, jajka, ser, boczek'},
-        {id: 2, name: 'Tiramisu', ingredients: 'biszkopty, kawa, mascarpone, kakao'}
+        {id: 1, name: 'Spaghetti Carbonara', ingredients: 'makaron, jajka, ser, boczek'},
+        {id: 2, name: 'Tiramisu', ingredients: 'biszkopty, kawa, mascarpone, kakao'},
     ],
+    favorites: [],
     searchTerm: '',
     newRecipe: { name: '', ingredients: '' }
 };
@@ -28,6 +29,24 @@ export const recipeReducer = (state, action) => {
                     ...state.newRecipe,
                     [action.payload.name]: action.payload.value
                 }
+            };
+        case 'ADD_TO_FAVORITES':
+            return {
+                ...state,
+                favorites: [
+                    ...state.favorites,
+                    action.payload
+                ]
+            };
+        case 'REMOVE_FROM_FAVORITES':
+            return {
+                ...state,
+                favorites: state.favorites.filter(recipe => recipe.id !== action.payload.id)
+            };
+        case 'DELETE_RECIPE':
+            return {
+                ...state,
+                recipes: state.recipes.filter(recipe => recipe.id !== action.payload.id)
             };
         default:
             return state;
